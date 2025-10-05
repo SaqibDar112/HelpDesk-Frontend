@@ -1,3 +1,8 @@
+#Live demo link
+https://help-desk-frontend-livid.vercel.app
+backend
+https://helpdesk-backend-0f82.onrender.com
+
 # 🧰 HelpDesk Management System
 
 A full-stack **Helpdesk Ticket Management System** built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**.  
