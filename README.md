@@ -1,16 +1,118 @@
-# React + Vite
+# 🧰 HelpDesk Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack **Helpdesk Ticket Management System** built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**.  
+It allows users to register, create and manage support tickets, assign agents, track progress, and automatically handle SLA breaches.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 👤 User Management
+- Register and Login using JWT Authentication.  
+- Roles: `user`, `agent`, `admin`.  
+- Each role has different permissions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎫 Ticket Management
+- Users can create support tickets with:
+  - Title, Description, and Priority (`Low`, `Medium`, `High`)
+- Tickets go through status stages:
+  - `open` → `in-progress` → `resolved` → `closed`
+- Agents or Admins can update ticket status.
 
-## Expanding the ESLint configuration
+### 💬 Comments & Timeline
+- Add comments to any ticket.  
+- Every action is logged in a timeline for audit trail.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ⏰ SLA (Service Level Agreement) Tracking
+- SLAs automatically track deadlines based on ticket priority.  
+- If an SLA is breached, the system marks it and notifies relevant users.  
+- A **cron job (`slaCron.js`)** runs in the backend to check for SLA breaches.
+
+### 🧩 Idempotency Key Support
+- All `POST` and `PATCH` requests include an `Idempotency-Key` header to prevent duplicate submissions.
+
+---
+
+---
+
+## ⚙️ Tech Stack
+
+### 🧠 Backend
+- **Node.js** — Server environment  
+- **Express.js** — RESTful API  
+- **MongoDB + Mongoose** — Database  
+- **jsonwebtoken (JWT)** — Authentication  
+- **cron** — Scheduled SLA checks  
+- **bcrypt.js** — Password hashing  
+
+### 💻 Frontend
+- **React.js (Vite)** — User Interface  
+- **Axios** — API communication  
+- **React Router DOM** — Routing  
+- **Tailwind CSS** — Styling  
+
+### ☁️ Others
+- **MongoDB Atlas** — Cloud database  
+- **Postman** — API testing  
+
+---
+
+## 🧩 API Overview
+
+---
+
+## 🧪 How to Run Locally
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/helpdesk-system.git
+cd helpdesk
+
+cd backend
+npm install
+
+.env
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+
+
+cd frontend
+npm install
+npm run dev
+
+Open the app at 👉 http://localhost:5173
+
+✅ Demo Flow
+
+Register a new user from the frontend.
+a
+Login to access your dashboard.
+
+Create a new ticket with title, description, and priority.
+
+View and update ticket status (In Progress, Resolve, Close).
+
+Add comments and view timeline updates.
+
+SLA checker (slaCron.js) runs automatically in the background.
+
+🏆 Summary
+
+This Helpdesk Management System demonstrates:
+
+Full-stack development using MERN
+
+Authentication & Authorization with roles
+
+RESTful API design
+
+Real-time ticket lifecycle management
+
+Automated SLA breach detection
+
+
+👨‍💻 Demo Credentials
+Mail ID : admin@mail.com
+Password : admin123
