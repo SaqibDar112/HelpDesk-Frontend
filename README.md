@@ -2,6 +2,9 @@
 https://help-desk-frontend-livid.vercel.app
 ## backend
 https://helpdesk-backend-0f82.onrender.com
+**I created different repos one for backend and another frontend for easy deployment and understanding**
+**We can create just one only then we can deploy by opting the root directory**
+
 
 # 🧰 HelpDesk Management System
 
