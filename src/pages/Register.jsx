@@ -36,6 +36,7 @@ const Register = () => {
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white">Create Account</h2>
             <p className="text-gray-400 mt-2">Join our helpdesk platform</p>
+            <p className="text-gray-400 mt-2">Creating account may take upto 1 min as using free cloud service🙃</p>
           </div>
 
           {error && (
