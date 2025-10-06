@@ -34,7 +34,7 @@ const Login = () => {
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white">Sign In</h2>
             <p className="text-gray-400 mt-2">Access your helpdesk account</p>
-            <p className="text-gray-400 mt-2">Sign in may take upto 1 min as using free cloud service🙃</p>
+            <p className="text-gray-400 mt-2">Sign in may take upto 1 min as using free cloud service🙏</p>
           </div>
 
           {error && (
